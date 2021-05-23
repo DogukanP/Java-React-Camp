@@ -1,15 +1,19 @@
 package com.padel.northwind.entities.concretes;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name="products")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="product_id")
     private int id;
 
