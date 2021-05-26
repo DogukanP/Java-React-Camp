@@ -6,10 +6,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.sql.Date;
+import java.time.LocalDate;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "job_seekers")
 public class JobSeeker extends User{
     @Column(name = "first_name")
@@ -22,5 +25,5 @@ public class JobSeeker extends User{
     private String identificationNumber;
 
     @Column(name = "birth_date")
-    private Date birthDate;
+    private LocalDate birthDate;
 }
