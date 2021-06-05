@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "system_workers")
-public class SystemWorker extends User{
+public class SystemWorker extends User {
     @Column(name = "first_name")
     private String firstName;
 

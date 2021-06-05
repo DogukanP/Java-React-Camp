@@ -4,6 +4,7 @@ package com.padel.HRMS.entities.concretes;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -18,4 +19,5 @@ public class JobTitle {
 
     @Column(name="title")
     private String title;
+
 }

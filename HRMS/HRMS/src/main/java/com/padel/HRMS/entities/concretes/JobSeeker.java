@@ -5,8 +5,9 @@ import lombok.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.sql.Date;
-import java.time.LocalDate;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -14,16 +15,22 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "job_seekers")
-public class JobSeeker extends User{
+public class JobSeeker extends User {
     @Column(name = "first_name")
+    @NotBlank(message = "firstName boş olamaz!")
+    @NotNull(message = "firstName boş olamaz!")
     private String firstName;
 
     @Column(name = "last_name")
+    @NotBlank(message = "lastName boş olamaz!")
+    @NotNull(message = "lastName boş olamaz!")
     private String lastName;
 
     @Column(name = "identification_number")
-    private String identificationNumber;
+    @NotBlank(message = "idNumber boş olamaz!")
+    @NotNull(message = "idNumber boş olamaz!")
+    private String idNumber;
 
     @Column(name = "birth_date")
-    private LocalDate birthDate;
+    private Date birthDate;
 }

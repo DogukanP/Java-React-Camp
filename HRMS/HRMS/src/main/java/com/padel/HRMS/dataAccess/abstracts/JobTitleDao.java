@@ -10,11 +10,11 @@ import java.util.Optional;
 
 public interface JobTitleDao extends JpaRepository<JobTitle,Integer> {
     @Query("select u from JobTitle u where lower(u.title) like lower(concat('%', :title,'%'))")
-    List<JobTitle> findJobTitles(@Param("title") String title);
+    List<JobTitle> getJobTitles(@Param("title") String title);
 
-    List<JobTitle> findById(@Param("") int id);
+    List<JobTitle> getById(@Param("") int id);
 
-    Optional<JobTitle> findOneByTitle(@Param("") String title);
+    Optional<JobTitle> getOneByTitle(@Param("") String title);
 
-    List<JobTitle> findAllByTitle(String title);
+    List<JobTitle> getByTitle(String title);
 }

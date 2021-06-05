@@ -7,6 +7,5 @@ import java.util.List;
 
 
 public interface JobSeekerDao extends JpaRepository<JobSeeker,Integer> {
-    List<JobSeeker> findAllByEmail(String email);
-    List<JobSeeker> findAllByIdentificationNumber(String identificationNumber);
+    List<JobSeeker> getByIdNumber(String idNumber);
 }

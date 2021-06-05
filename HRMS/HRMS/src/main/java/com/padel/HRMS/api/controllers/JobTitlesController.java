@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/jobtitle/")
+@RequestMapping("/api/jobTitle/")
 public class JobTitlesController {
     final private JobTitleService jobTitleService;
 
@@ -28,14 +28,14 @@ public class JobTitlesController {
         return jobTitleService.getAll();
     }
 
-    @RequestMapping(value = "/findbyid/{id}", method = RequestMethod.GET)
-    public DataResult<List<JobTitle>> findById(@PathVariable("id") Integer id){
-        return jobTitleService.findById(id);
+    @RequestMapping(value = "/getById/{id}", method = RequestMethod.GET)
+    public DataResult<List<JobTitle>> getById(@PathVariable("id") Integer id){
+        return jobTitleService.getById(id);
     }
 
-    @RequestMapping(value = "/findbytitle/{title}", method = RequestMethod.GET)
-    public DataResult<List<JobTitle>> findByTitle(@PathVariable("title") String title){
-        return jobTitleService.findJobTitles(title);
+    @RequestMapping(value = "/getByTitle/{title}", method = RequestMethod.GET)
+    public DataResult<List<JobTitle>> getByTitle(@PathVariable("title") String title){
+        return jobTitleService.getJobTitles(title);
     }
 
     @PostMapping("/add")

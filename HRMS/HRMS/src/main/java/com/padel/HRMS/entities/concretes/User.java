@@ -4,6 +4,9 @@ package com.padel.HRMS.entities.concretes;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
@@ -18,9 +21,14 @@ public class User {
     private int id;
 
     @Column(name="email_address")
-    private String emailAddress;
+    @Email(message = "Hatali email!")
+    @NotBlank(message = "Bu alan boş olamaz!")
+    @NotNull(message = "Bu alan boş olamaz!")
+    private String email;
 
     @Column(name="password")
+    @NotBlank(message = "Bu alan boş olamaz!")
+    @NotNull(message = "Bu alan boş olamaz!")
     private String password;
 
 }
