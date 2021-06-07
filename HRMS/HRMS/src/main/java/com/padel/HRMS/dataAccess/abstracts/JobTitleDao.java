@@ -4,10 +4,12 @@ import com.padel.HRMS.entities.concretes.JobTitle;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public interface JobTitleDao extends JpaRepository<JobTitle,Integer> {
     @Query("select u from JobTitle u where lower(u.title) like lower(concat('%', :title,'%'))")
     List<JobTitle> getJobTitles(@Param("title") String title);

@@ -21,10 +21,13 @@ public class City {
     @Column(name="id")
     private int id;
 
-    @Column(name = "cities")
+    @Column(name = "city_name")
     @NotBlank(message = "cityName boş olamaz!")
     @NotNull(message = "cityName boş olamaz!")
     private String cityName;
+
+    @OneToMany(mappedBy = "city")
+    private List<JobAdvertisement> jobAdvertisements;
 
 
 }

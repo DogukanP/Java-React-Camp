@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import java.time.LocalDate;
 
 @Data
@@ -26,9 +27,11 @@ public class JobAdvertisement {
     private String jobDescription;
 
     @Column(name = "min_salary")
+    @Positive
     private double minSalary;
 
     @Column(name = "max_salary")
+    @Positive
     private double maxSalary;
 
     @Column(name = "number_of_open_position")
@@ -45,7 +48,7 @@ public class JobAdvertisement {
     @Column(name = "is_active")
     private boolean isActive;
 
-    @ManyToOne()
+    @ManyToOne
     private Employer employer;
 
     @ManyToOne
