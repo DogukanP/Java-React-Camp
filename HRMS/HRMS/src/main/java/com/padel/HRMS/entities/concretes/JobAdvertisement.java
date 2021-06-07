@@ -45,7 +45,7 @@ public class JobAdvertisement {
     @Column(name = "is_active")
     private boolean isActive;
 
-    @ManyToOne
+    @ManyToOne()
     private Employer employer;
 
     @ManyToOne

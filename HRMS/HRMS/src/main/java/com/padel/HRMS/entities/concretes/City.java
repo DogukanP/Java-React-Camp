@@ -26,8 +26,5 @@ public class City {
     @NotNull(message = "cityName boş olamaz!")
     private String cityName;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "city")
-    private List<JobAdvertisement> jobAdvertisement;
 
 }
