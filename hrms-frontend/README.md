@@ -1,3 +1,5 @@
+![hrms-component-diagram](https://user-images.githubusercontent.com/37012183/121387198-2da21e80-c953-11eb-8855-1d60bcaddaab.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
